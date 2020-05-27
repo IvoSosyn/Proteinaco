@@ -80,6 +80,9 @@ public class ProcessXml {
                 NodeList codes = itemElement.getElementsByTagName("CODE");
                 if (codes.getLength() > 0) {
                     // Načíst kód objednávky
+                    /**
+                     * TO-DO: vyladit 2 stejné proteiny do 1 položky
+                     */
                     String code = codes.item(0).getTextContent();
                     if (Proteinaco.codeKeys.containsKey(code)) {
                         String[] itemsCode = Proteinaco.codeKeys.get(code);
