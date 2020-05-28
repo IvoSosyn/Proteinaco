@@ -29,7 +29,7 @@ public class ProcessXml {
 
     void run() {
         try {
-            Proteinaco.doc = Proteinaco.builder.parse(Proteinaco.tempXml);
+            Proteinaco.doc = Proteinaco.builder.parse(Proteinaco.tempXmlFile);
         } catch (SAXException | IOException ex) {
             logger.error(ex);
             return;

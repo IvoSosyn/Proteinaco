@@ -8,6 +8,7 @@ package cz.proteinaco;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Properties;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -23,6 +24,11 @@ import org.w3c.dom.Document;
 public class Proteinaco {
 
     /**
+     * Parametry systému
+     */
+    public static Properties prop = new Properties();
+    public static File propFile = null;
+    /**
      * Implementace org.apache.logging.log4j.Logger
      */
     public static Logger logger = LogManager.getLogger(Proteinaco.class);
@@ -30,35 +36,55 @@ public class Proteinaco {
     public static DocumentBuilderFactory factory = null;
     public static DocumentBuilder builder = null;
     public static Document doc = null;
-    public static String urlXml = "https://www.proteinaco.cz/export/orders.xml?patternId=41&hash=5d0a5c7c2f1ef8713f8c8b34ef0c3ecc63ba6f1147a7ac8eb031a470a40e3520";
-    public static File tempXml = null;
 
-    public static String codeKeysURI = System.getProperty("user.dir") + "\\codeKeys.csv";
+    public static String urlXml = null;
+    public static File tempXmlFile = null;
+
+    public static String codeKeysName = null;
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
 
+    public static String productsName = null;
+    public static File productsFile = null;
+    public static HashMap<String, String[]> products = null;
+
+    public static String orderXmlName = null;
+    public static File orderXmlFile = null;
+
+    ReadProperties readProperties = null;
     ReadKeys readKeys = null;
     ReadXml readXml = null;
     ProcessXml processXml = null;
     WriteXml writeXml = null;
 
     public Proteinaco() {
+        readProperties = new ReadProperties();
         readKeys = new ReadKeys();
         readXml = new ReadXml();
         processXml = new ProcessXml();
         writeXml = new WriteXml();
     }
 
-    private void run() {
+    private void run(String[] args) {
+
+        // Načíst parametry z parametrického souboru
         try {
-            tempXml = File.createTempFile("PaC", "xml");
-            tempXml.deleteOnExit();
-            System.out.println("tempXml =" + tempXml.getAbsolutePath());
+            readProperties.run(args);
+        } catch (Exception ex) {
+            logger.error(ex);
+            return;
+        }
+
+        // Naplnit základní statické proměnné
+        try {
+            tempXmlFile = File.createTempFile("PaC", "xml");
+            tempXmlFile.deleteOnExit();
+            System.out.println("tempXml =" + tempXmlFile.getAbsolutePath());
         } catch (IOException ex) {
             logger.error(ex);
             return;
         }
-        codeKeysFile = new File(codeKeysURI);
+        codeKeysFile = new File(codeKeysName);
         System.out.println("codeKeysFile =" + codeKeysFile.getAbsolutePath());
 
         factory = DocumentBuilderFactory.newInstance();
@@ -76,8 +102,9 @@ public class Proteinaco {
     }
 
     public static void main(String[] args) {
+
         Proteinaco proteinaco = new Proteinaco();
-        proteinaco.run();
+        proteinaco.run(args);
     }
 
 }
