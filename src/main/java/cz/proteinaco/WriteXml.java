@@ -28,22 +28,21 @@ public class WriteXml {
     void run() {
         try {
             //===================
-            
-            
+
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transf = transformerFactory.newTransformer();
-            
+
             transf.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             transf.setOutputProperty(OutputKeys.INDENT, "yes");
             transf.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
-            
+
             DOMSource source = new DOMSource(Proteinaco.doc);
-            
-            File myFile = new File(System.getProperty("user.dir")+"\\proteinaco.xml");
-            
+
+            File myFile = new File(System.getProperty("user.dir") + "\\proteinaco.xml");
+
             StreamResult console = new StreamResult(System.out);
             StreamResult file = new StreamResult(myFile);
-            
+
             transf.transform(source, console);
             transf.transform(source, file);
         } catch (TransformerConfigurationException ex) {

@@ -6,15 +6,11 @@
 package cz.proteinaco;
 
 import static cz.proteinaco.Proteinaco.logger;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 /**
@@ -106,10 +102,10 @@ public class ProcessXml {
     private void setTag(Node nodeParent, String tagName, String value) {
         NodeList nodeList = ((Element) nodeParent).getElementsByTagName(tagName);
         if (nodeList.getLength() > 0) {
-            Node node  = nodeList.item(0);
-            String oldValue=node.getTextContent();
+            Node node = nodeList.item(0);
+            String oldValue = node.getTextContent();
             node.setTextContent(value);
-            System.out.println(" tagName="+tagName+"OLD value=" + oldValue + "NEW value=" + value + "AKTUAL node.getTextContent()=" + node.getTextContent());
+            System.out.println(" tagName=" + tagName + "OLD value=" + oldValue + "NEW value=" + value + "AKTUAL node.getTextContent()=" + node.getTextContent());
         }
     }
 }
