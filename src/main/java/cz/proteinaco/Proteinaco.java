@@ -8,8 +8,12 @@ package cz.proteinaco;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.w3c.dom.Document;
 
 /**
  * Hlavní třída pro konverzi Objednávek .XML do Skladu .XML firmy Protein&CO
@@ -19,13 +23,17 @@ import org.apache.logging.log4j.Logger;
 public class Proteinaco {
 
     /**
-     *
+     * Implementace org.apache.logging.log4j.Logger
      */
     public static Logger logger = LogManager.getLogger(Proteinaco.class);
 
+    public static DocumentBuilderFactory factory = null;
+    public static DocumentBuilder builder = null;
+    public static Document doc = null;
     public static String urlXml = "https://www.proteinaco.cz/export/orders.xml?patternId=41&hash=5d0a5c7c2f1ef8713f8c8b34ef0c3ecc63ba6f1147a7ac8eb031a470a40e3520";
     public static File tempXml = null;
-    public static String codeKeysURI = System.getProperty("user.dir")+"\\codeKeys.csv";
+
+    public static String codeKeysURI = System.getProperty("user.dir") + "\\codeKeys.csv";
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
 
@@ -52,6 +60,14 @@ public class Proteinaco {
         }
         codeKeysFile = new File(codeKeysURI);
         System.out.println("codeKeysFile =" + codeKeysFile.getAbsolutePath());
+
+        factory = DocumentBuilderFactory.newInstance();
+        try {
+            builder = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException ex) {
+            logger.error(ex);
+            return;
+        }
 
         readKeys.run();
         readXml.run();
