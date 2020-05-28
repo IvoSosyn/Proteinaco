@@ -25,9 +25,6 @@ import org.xml.sax.SAXException;
  */
 public class ProcessXml {
 
-    DocumentBuilderFactory factory = null;
-    DocumentBuilder dBuilder = null;
-    Document doc = null;
     ArrayList<Node> ordersNew = null;
     ArrayList<Node> itemsNew = null;
 
@@ -36,19 +33,17 @@ public class ProcessXml {
 
     void run() {
         try {
-            factory = DocumentBuilderFactory.newInstance();
-            dBuilder = factory.newDocumentBuilder();
-            doc = dBuilder.parse(Proteinaco.tempXml);
-        } catch (SAXException | IOException | ParserConfigurationException ex) {
+            Proteinaco.doc = Proteinaco.builder.parse(Proteinaco.tempXml);
+        } catch (SAXException | IOException ex) {
             logger.error(ex);
             return;
         }
-        doc.getDocumentElement().normalize();
+        Proteinaco.doc.getDocumentElement().normalize();
 
-        System.out.println("Root element: " + doc.getDocumentElement().getNodeName());
+        System.out.println("Root element: " + Proteinaco.doc.getDocumentElement().getNodeName());
         // Načíst objednávky 
         ordersNew = new ArrayList<>();
-        NodeList orders = doc.getElementsByTagName("ORDER");
+        NodeList orders = Proteinaco.doc.getElementsByTagName("ORDER");
         for (int i = 0; i < orders.getLength(); i++) {
             // Zpracuj objednávku
             Node order = orders.item(i);
@@ -92,12 +87,8 @@ public class ProcessXml {
                                 continue;
                             }
                             Node itemCodeNew = item.cloneNode(true);
-                            NodeList codesNew = ((Element) itemCodeNew).getElementsByTagName("CODE");
-                            if (codesNew.getLength() > 0) {
-                                Node codeNew = codesNew.item(0);
-                                codeNew.setTextContent(itemCode);
-                            }
-                            itemsNew.add(item.cloneNode(true));
+                            setTag(itemCodeNew, "CODE", itemCode);
+                            itemsNew.add(itemCodeNew);
                         }
                     } else {
                         itemsNew.add(item.cloneNode(true));
@@ -105,9 +96,20 @@ public class ProcessXml {
                 }
                 order_items.removeChild(item);
             }
+            // Přidat nové položky skladu
             for (Node itemNew : itemsNew) {
                 order_items.appendChild(itemNew);
             }
+        }
+    }
+
+    private void setTag(Node nodeParent, String tagName, String value) {
+        NodeList nodeList = ((Element) nodeParent).getElementsByTagName(tagName);
+        if (nodeList.getLength() > 0) {
+            Node node  = nodeList.item(0);
+            String oldValue=node.getTextContent();
+            node.setTextContent(value);
+            System.out.println(" tagName="+tagName+"OLD value=" + oldValue + "NEW value=" + value + "AKTUAL node.getTextContent()=" + node.getTextContent());
         }
     }
 }
