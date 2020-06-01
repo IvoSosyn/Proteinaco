@@ -33,17 +33,18 @@ class ReadKeys {
             String line;
             StringTokenizer stringTokenizer;
             String key;
-            String[] items = new String[5];
+            String[] items;
             while ((line = br.readLine()) != null) {
                 stringTokenizer = new StringTokenizer(line, ",;|:");
                 key = null;
                 int i = 0;
+                items = new String[5];
                 while (stringTokenizer.hasMoreTokens()) {
                     String token = stringTokenizer.nextToken(",;|:");
                     if (key == null) {
-                        key = token;
+                        key = token.trim() + Proteinaco.CODE_END;
                     } else {
-                        items[i++] = token;
+                        items[i++] = token.trim() + Proteinaco.CODE_END;
                     }
                 }
                 /**

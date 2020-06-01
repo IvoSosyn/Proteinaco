@@ -43,7 +43,8 @@ public class Proteinaco {
     public static String codeKeysName = null;
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
-
+    public static final String CODE_END="#";
+    
     public static String itemsXmlName = null;
     public static File itemsXmlFile = null;
     public static HashMap<String, ProteinacoItem> item = null;
@@ -53,7 +54,7 @@ public class Proteinaco {
 
     ReadProperties readProperties = null;
     ReadKeys readKeys = null;
-    ReadItems readItems = null;
+    ReadXmlItems readItems = null;
     ReadXml readXml = null;
     ProcessXml processXml = null;
     WriteXml writeXml = null;
@@ -61,7 +62,7 @@ public class Proteinaco {
     public Proteinaco() {
         readProperties = new ReadProperties();
         readKeys = new ReadKeys();
-        readItems = new ReadItems();
+        readItems = new ReadXmlItems();
         readXml = new ReadXml();
         processXml = new ProcessXml();
         writeXml = new WriteXml();

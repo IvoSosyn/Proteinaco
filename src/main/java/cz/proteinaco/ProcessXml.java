@@ -66,7 +66,7 @@ public class ProcessXml {
                 Node item = items.item(0);
 
                 // Načíst kód položky objednávky
-                String codeItem = getTag(item, "CODE");
+                String codeItem = getTag(item, "CODE").trim()+Proteinaco.CODE_END;
                 String amountItem = getTag(item, "AMOUNT");
                 HashMap<String, Integer> orderNewItem = new HashMap();
                 if (Proteinaco.codeKeys.containsKey(codeItem)) {
@@ -93,7 +93,7 @@ public class ProcessXml {
                     // Uložit položky ze zássobníku do objednávky
                     for (String key: orderNewItem.keySet()) {
                         Node itemCodeNew = item.cloneNode(true);
-                        setTag(itemCodeNew, "CODE", key );                        
+                        setTag(itemCodeNew, "CODE", key.replaceAll(Proteinaco.CODE_END,"") );                        
                         setTag(itemCodeNew, "AMOUNT", String.format("%1$d",orderNewItem.get(key) ) );
                         setTag(itemCodeNew, "VARIANT_NAME", Proteinaco.item.get(key).getVariant() );                                                
                         itemsNew.add(itemCodeNew);
