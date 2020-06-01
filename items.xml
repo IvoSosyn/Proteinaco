@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ORDER_ITEMS>
+    <ITEM>
+       <CODE>67/VAN</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+    <ITEM>
+       <CODE>67/CHO</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>    
+    <ITEM>
+       <CODE>67/BAN</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>Banana split</VARIANT>
+    </ITEM>    
+    <ITEM>
+       <CODE>67/PIS</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>Pistachio dessert</VARIANT>
+    </ITEM>    
+    <ITEM>
+       <CODE>67/STR</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>Strawberry milkshake</VARIANT>
+    </ITEM>                
+    <ITEM>
+       <CODE>67/CHO2</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>Chocobanana symphony</VARIANT>
+    </ITEM>                
+    <ITEM>
+       <CODE>67/PLA</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>playful cherry</VARIANT>
+    </ITEM>                    
+    <ITEM>
+       <CODE>67/HAZ</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>hazelnut treat</VARIANT>
+    </ITEM>                    
+    <ITEM>
+       <CODE>67/PIS3</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>Pistachio dessert</VARIANT>
+    </ITEM>                    
+</ORDER_ITEMS>

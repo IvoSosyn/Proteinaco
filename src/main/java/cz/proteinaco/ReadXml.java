@@ -34,11 +34,11 @@ public class ReadXml {
 
     void run() {
         try {
-            urlOrdersXml = new URL(Proteinaco.urlXml);
+            urlOrdersXml = new URL(Proteinaco.urlOrderOriginalXml);
             conn = (HttpsURLConnection) urlOrdersXml.openConnection();
 
             br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-            bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Proteinaco.tempXmlFile), "UTF-8"));
+            bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(Proteinaco.tempOrderOriginalXmlFile), "UTF-8"));
             String inputLine;
 
             while ((inputLine = br.readLine()) != null) {

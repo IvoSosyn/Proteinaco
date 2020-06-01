@@ -37,22 +37,23 @@ public class Proteinaco {
     public static DocumentBuilder builder = null;
     public static Document doc = null;
 
-    public static String urlXml = null;
-    public static File tempXmlFile = null;
+    public static String urlOrderOriginalXml = null;
+    public static File tempOrderOriginalXmlFile = null;
 
     public static String codeKeysName = null;
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
 
-    public static String productsName = null;
-    public static File productsFile = null;
-    public static HashMap<String, String[]> products = null;
+    public static String itemsXmlName = null;
+    public static File itemsXmlFile = null;
+    public static HashMap<String, ProteinacoItem> item = null;
 
     public static String orderXmlName = null;
     public static File orderXmlFile = null;
 
     ReadProperties readProperties = null;
     ReadKeys readKeys = null;
+    ReadItems readItems = null;
     ReadXml readXml = null;
     ProcessXml processXml = null;
     WriteXml writeXml = null;
@@ -60,6 +61,7 @@ public class Proteinaco {
     public Proteinaco() {
         readProperties = new ReadProperties();
         readKeys = new ReadKeys();
+        readItems = new ReadItems();
         readXml = new ReadXml();
         processXml = new ProcessXml();
         writeXml = new WriteXml();
@@ -77,15 +79,18 @@ public class Proteinaco {
 
         // Naplnit základní statické proměnné
         try {
-            tempXmlFile = File.createTempFile("PaC", "xml");
-            tempXmlFile.deleteOnExit();
-            System.out.println("tempXml =" + tempXmlFile.getAbsolutePath());
+            tempOrderOriginalXmlFile = File.createTempFile("PaC", "xml");
+            // tempOrderOriginalXmlFile.deleteOnExit();
+            System.out.println("tempXml =" + tempOrderOriginalXmlFile.getAbsolutePath());
         } catch (IOException ex) {
             logger.error(ex);
             return;
         }
         codeKeysFile = new File(codeKeysName);
         System.out.println("codeKeysFile =" + codeKeysFile.getAbsolutePath());
+
+        itemsXmlFile = new File(itemsXmlName);
+        System.out.println("itemsFile =" + itemsXmlFile.getAbsolutePath());
 
         factory = DocumentBuilderFactory.newInstance();
         try {
@@ -96,6 +101,7 @@ public class Proteinaco {
         }
 
         readKeys.run();
+        readItems.run();        
         readXml.run();
         processXml.run();
         writeXml.run();
