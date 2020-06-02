@@ -32,14 +32,14 @@ class ReadXmlItems {
         }
         Proteinaco.doc.getDocumentElement().normalize();
         // Načíst položky ceníku z XML souboru
-        System.out.println("ItemsXmlFile> Root element: " + Proteinaco.doc.getDocumentElement().getNodeName());
+//        System.out.println("ItemsXmlFile> Root element: " + Proteinaco.doc.getDocumentElement().getNodeName());
 
 // Uložit položky do HashMap k dalšímu použití
         Proteinaco.item = new HashMap<>();
         NodeList items = Proteinaco.doc.getElementsByTagName("ITEM");
         for (int i = 0; i < items.getLength(); i++) {
             Node item = items.item(i);
-            String code = getTag(item, "CODE").trim()+Proteinaco.CODE_END;
+            String code = getTag(item, "CODE").trim() + Proteinaco.CODE_END;
             Proteinaco.item.put(code, new ProteinacoItem(getTag(item, "CODE"), getTag(item, "NAME"), getTag(item, "VARIANT")));
         }
     }
@@ -50,7 +50,7 @@ class ReadXmlItems {
         if (nodeList.getLength() > 0) {
             Node node = nodeList.item(0);
             value = node.getTextContent();
-            System.out.println(" tagName=" + tagName + " node.getTextContent()=" + node.getTextContent());
+//            System.out.println(" tagName=" + tagName + " node.getTextContent()=" + node.getTextContent());
         }
         return value;
     }

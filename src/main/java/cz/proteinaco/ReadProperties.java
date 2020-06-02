@@ -59,9 +59,9 @@ public class ReadProperties {
         }
         // Nastavení proměnných
         Proteinaco.urlOrderOriginalXml = Proteinaco.prop.getProperty("urlOrder", "https://www.proteinaco.cz/export/orders.xml?patternId=41&hash=5d0a5c7c2f1ef8713f8c8b34ef0c3ecc63ba6f1147a7ac8eb031a470a40e3520");
-        Proteinaco.codeKeysName = Proteinaco.prop.getProperty("codeKeysCSV", System.getProperty("user.dir") + File.separator +"codeKeys.csv");
-        Proteinaco.itemsXmlName = Proteinaco.prop.getProperty("itemsXMLName", System.getProperty("user.dir")+ File.separator  + "items.xml");
-        Proteinaco.orderXmlName = Proteinaco.prop.getProperty("orderXmlName", System.getProperty("user.dir")+ File.separator  + "proteinaco.xml");
+        Proteinaco.codeKeysName = Proteinaco.prop.getProperty("codeKeysCSV", System.getProperty("user.dir") + File.separator + "codeKeys.csv");
+        Proteinaco.itemsXmlName = Proteinaco.prop.getProperty("itemsXMLName", System.getProperty("user.dir") + File.separator + "items.xml");
+        Proteinaco.orderXmlName = Proteinaco.prop.getProperty("orderXmlName", System.getProperty("user.dir") + File.separator + "proteinaco.xml");
 
         // Uložení parametrů do souboru
         if (Proteinaco.propFile != null && !Proteinaco.propFile.exists()) {

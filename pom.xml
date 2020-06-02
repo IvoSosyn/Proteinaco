@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cz.proteinaco</groupId>
     <artifactId>Proteinaco</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-Production</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -12,6 +12,23 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>cz.proteinaco.Proteinaco</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+ 
     <dependencies>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -19,4 +36,5 @@
             <version>2.13.3</version>
         </dependency>
     </dependencies>
+    <description>cz.proteinaco.Proteinaco</description>
 </project>

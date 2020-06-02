@@ -14,8 +14,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.net.ssl.HttpsURLConnection;
 
 /**
@@ -49,13 +47,13 @@ public class ReadXml {
             logger.error(ex);
             return;
         } catch (IOException ex) {
-            Logger.getLogger(ReadXml.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex);
         }
         if (br instanceof BufferedReader) {
             try {
                 br.close();
             } catch (IOException ex) {
-                Logger.getLogger(ReadXml.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex);
             }
         }
         if (bw instanceof BufferedWriter) {
@@ -63,7 +61,7 @@ public class ReadXml {
                 bw.flush();
                 bw.close();
             } catch (IOException ex) {
-                Logger.getLogger(ReadXml.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex);
             }
         }
 

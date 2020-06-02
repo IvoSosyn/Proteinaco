@@ -37,7 +37,7 @@ public class ProcessXml {
         }
         Proteinaco.doc.getDocumentElement().normalize();
 
-        System.out.println("Root element: " + Proteinaco.doc.getDocumentElement().getNodeName());
+//        System.out.println("Root element: " + Proteinaco.doc.getDocumentElement().getNodeName());
         // Načíst objednávky 
         ordersNew = new ArrayList<>();
         NodeList orders = Proteinaco.doc.getElementsByTagName("ORDER");
@@ -54,7 +54,7 @@ public class ProcessXml {
             if (order_itemses.getLength() > 0) {
                 order_items = order_itemses.item(0);
                 for (int j = 0; j < order_items.getChildNodes().getLength(); j++) {
-                    System.out.println(" name=" + order_items.getChildNodes().item(j).getNodeName() + " type=" + order_items.getChildNodes().item(j).getNodeType() + " value=" + order_items.getChildNodes().item(j).getNodeValue());
+//                    System.out.println(" name=" + order_items.getChildNodes().item(j).getNodeName() + " type=" + order_items.getChildNodes().item(j).getNodeType() + " value=" + order_items.getChildNodes().item(j).getNodeValue());
                 }
             }
 
@@ -66,7 +66,7 @@ public class ProcessXml {
                 Node item = items.item(0);
 
                 // Načíst kód položky objednávky
-                String codeItem = getTag(item, "CODE").trim()+Proteinaco.CODE_END;
+                String codeItem = getTag(item, "CODE").trim() + Proteinaco.CODE_END;
                 String amountItem = getTag(item, "AMOUNT");
                 HashMap<String, Integer> orderNewItem = new HashMap();
                 if (Proteinaco.codeKeys.containsKey(codeItem)) {
@@ -91,11 +91,11 @@ public class ProcessXml {
                         orderNewItem.put(itemCodeVariant, amount);
                     }
                     // Uložit položky ze zássobníku do objednávky
-                    for (String key: orderNewItem.keySet()) {
+                    for (String key : orderNewItem.keySet()) {
                         Node itemCodeNew = item.cloneNode(true);
-                        setTag(itemCodeNew, "CODE", key.replaceAll(Proteinaco.CODE_END,"") );                        
-                        setTag(itemCodeNew, "AMOUNT", String.format("%1$d",orderNewItem.get(key) ) );
-                        setTag(itemCodeNew, "VARIANT_NAME", Proteinaco.item.get(key).getVariant() );                                                
+                        setTag(itemCodeNew, "CODE", key.replaceAll(Proteinaco.CODE_END, ""));
+                        setTag(itemCodeNew, "AMOUNT", String.format("%1$d", orderNewItem.get(key)));
+                        setTag(itemCodeNew, "VARIANT_NAME", Proteinaco.item.get(key).getVariant());
                         itemsNew.add(itemCodeNew);
                     }
 
@@ -118,7 +118,7 @@ public class ProcessXml {
             Node node = nodeList.item(0);
             String oldValue = node.getTextContent();
             node.setTextContent(value);
-            System.out.println(" tagName=" + tagName + " OLD value=" + oldValue + " NEW value=" + value + " AKTUAL node.getTextContent()=" + node.getTextContent());
+//            System.out.println(" tagName=" + tagName + " OLD value=" + oldValue + " NEW value=" + value + " AKTUAL node.getTextContent()=" + node.getTextContent());
         }
     }
 

@@ -43,8 +43,8 @@ public class Proteinaco {
     public static String codeKeysName = null;
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
-    public static final String CODE_END="#";
-    
+    public static final String CODE_END = "#";
+
     public static String itemsXmlName = null;
     public static File itemsXmlFile = null;
     public static HashMap<String, ProteinacoItem> item = null;
@@ -81,7 +81,7 @@ public class Proteinaco {
         // Naplnit základní statické proměnné
         try {
             tempOrderOriginalXmlFile = File.createTempFile("PaC", "xml");
-            // tempOrderOriginalXmlFile.deleteOnExit();
+            tempOrderOriginalXmlFile.deleteOnExit();
             System.out.println("tempXml =" + tempOrderOriginalXmlFile.getAbsolutePath());
         } catch (IOException ex) {
             logger.error(ex);
@@ -102,7 +102,7 @@ public class Proteinaco {
         }
 
         readKeys.run();
-        readItems.run();        
+        readItems.run();
         readXml.run();
         processXml.run();
         writeXml.run();

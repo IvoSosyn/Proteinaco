@@ -5,6 +5,7 @@
  */
 package cz.proteinaco;
 
+import static cz.proteinaco.Proteinaco.logger;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -60,13 +61,13 @@ public class WriteXml {
         } catch (TransformerConfigurationException ex) {
             Logger.getLogger(WriteXml.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TransformerException ex) {
-            Logger.getLogger(WriteXml.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex);
         }
         if (file instanceof StreamResult && file.getOutputStream() instanceof OutputStream) {
             try {
                 file.getOutputStream().close();
             } catch (IOException ex) {
-                Logger.getLogger(WriteXml.class.getName()).log(Level.SEVERE, null, ex);
+                logger.error(ex);
             }
         }
     }
