@@ -53,10 +53,10 @@ public class WriteXml {
 
             Proteinaco.orderXmlFile = new File(Proteinaco.orderXmlName);
 
-            console = new StreamResult(System.out);
+//            console = new StreamResult(System.out);
             file = new StreamResult(Proteinaco.orderXmlFile);
 
-            transformer.transform(domSource, console);
+//            transformer.transform(domSource, console);
             transformer.transform(domSource, file);
         } catch (TransformerConfigurationException ex) {
             Logger.getLogger(WriteXml.class.getName()).log(Level.SEVERE, null, ex);
