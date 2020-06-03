@@ -5,18 +5,24 @@
  */
 package cz.proteinaco;
 
-import static cz.proteinaco.Proteinaco.logger;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
  * @author ivo
  */
 public class ReadProperties {
+
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(ReadProperties.class);
 
     FileInputStream fis = null;
     FileOutputStream fos = null;

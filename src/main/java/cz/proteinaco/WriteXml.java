@@ -5,12 +5,9 @@
  */
 package cz.proteinaco;
 
-import static cz.proteinaco.Proteinaco.logger;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -18,6 +15,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Instance třídy zapíše XML soubor na disk, do místa určeného parametrem
@@ -26,6 +25,11 @@ import javax.xml.transform.stream.StreamResult;
  * @author sosyn
  */
 public class WriteXml {
+
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(WriteXml.class);
 
     TransformerFactory transformerFactory = null;
     Transformer transformer = null;
@@ -59,7 +63,7 @@ public class WriteXml {
 //            transformer.transform(domSource, console);
             transformer.transform(domSource, file);
         } catch (TransformerConfigurationException ex) {
-            Logger.getLogger(WriteXml.class.getName()).log(Level.SEVERE, null, ex);
+            logger.error(ex);
         } catch (TransformerException ex) {
             logger.error(ex);
         }

@@ -5,11 +5,19 @@
  */
 package cz.proteinaco;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  *
  * @author sosyn
  */
 public class ProteinacoItem {
+
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(ProteinacoItem.class);
 
     private String code = "nezname";
     private String name = "nezname";

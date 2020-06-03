@@ -24,14 +24,15 @@ import org.w3c.dom.Document;
 public class Proteinaco {
 
     /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(Proteinaco.class);
+
+    /**
      * Parametry systému
      */
     public static Properties prop = new Properties();
     public static File propFile = null;
-    /**
-     * Implementace org.apache.logging.log4j.Logger
-     */
-    public static Logger logger = LogManager.getLogger(Proteinaco.class);
 
     public static DocumentBuilderFactory factory = null;
     public static DocumentBuilder builder = null;

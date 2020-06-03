@@ -5,13 +5,14 @@
  */
 package cz.proteinaco;
 
-import static cz.proteinaco.Proteinaco.logger;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 /**
@@ -21,6 +22,10 @@ import org.xml.sax.SAXException;
  * @author sosyn
  */
 public class ProcessXml {
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(ProcessXml.class);
 
     ArrayList<Node> ordersNew = null;
     ArrayList<Node> itemsNew = null;

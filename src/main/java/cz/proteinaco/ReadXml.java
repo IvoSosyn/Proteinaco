@@ -5,7 +5,6 @@
  */
 package cz.proteinaco;
 
-import static cz.proteinaco.Proteinaco.logger;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -15,12 +14,19 @@ import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
  * @author sosyn
  */
 public class ReadXml {
+
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(ReadXml.class);
 
     URL urlOrdersXml = null;
     HttpsURLConnection conn = null;

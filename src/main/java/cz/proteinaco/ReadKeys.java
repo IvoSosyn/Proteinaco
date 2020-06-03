@@ -5,7 +5,6 @@
  */
 package cz.proteinaco;
 
-import static cz.proteinaco.Proteinaco.logger;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,12 +13,19 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.StringTokenizer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
  * @author sosyn
  */
 class ReadKeys {
+
+    /**
+     * Implementace org.apache.logging.log4j.Logger
+     */
+    private static final Logger logger = LogManager.getLogger(ReadKeys.class);
 
     BufferedReader br = null;
 
