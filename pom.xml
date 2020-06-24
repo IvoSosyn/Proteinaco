@@ -17,6 +17,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                  <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -28,7 +29,7 @@
             </plugin>
         </plugins>
     </build>
- 
+
     <dependencies>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>

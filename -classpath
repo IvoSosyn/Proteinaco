@@ -1,0 +1,6 @@
+#Promenne programu, definujici jeho vlastnosti:
+#Wed Jun 24 10:25:39 CEST 2020
+orderXmlName=D\:\\NetBeansProjects\\Proteinaco\\proteinaco.xml
+urlOrder=https\://www.proteinaco.cz/export/orders.xml?patternId\=41&hash\=5d0a5c7c2f1ef8713f8c8b34ef0c3ecc63ba6f1147a7ac8eb031a470a40e3520
+codeKeysCSV=D\:\\NetBeansProjects\\Proteinaco\\codeKeys.csv
+itemsXMLName=D\:\\NetBeansProjects\\Proteinaco\\items.xml

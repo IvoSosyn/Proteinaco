@@ -1,0 +1,12 @@
+Server pro pøepoèet objednávek Protein&Co - Tomcat
+
+IP serveru:    80.211.198.81
+Login:  root / 1Proteinaco2 (zablokovaný, nejde se pøihlásit kvùli bezpeènosti)
+Login:  proteinaco / 19940405 (uživatel se SUDO právy, pøidány pøíkazem: "usermod -aG sudo username" )
+
+Docasne vyjmuty parametry z projektu Proteinaco
+"Run: Arguments:" 
+-classpath %classpath cz.proteinaco.Proteinaco -classpath %classpath cz.proteinaco.Proteinaco c:\Temp\Proteinaco\proteinaco.config
+
+"Run: VM options:"
+Main-Class:cz.proteinaco.Proteinaco 

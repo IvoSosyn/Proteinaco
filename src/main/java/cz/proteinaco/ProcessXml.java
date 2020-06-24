@@ -100,7 +100,7 @@ public class ProcessXml {
                         Node itemCodeNew = item.cloneNode(true);
                         setTag(itemCodeNew, "CODE", key.replaceAll(Proteinaco.CODE_END, ""));
                         setTag(itemCodeNew, "AMOUNT", String.format("%1$d", orderNewItem.get(key)));
-                        setTag(itemCodeNew, "VARIANT_NAME", Proteinaco.item.get(key).getVariant());
+                        setTag(itemCodeNew, "VARIANT_NAME", Proteinaco.item.get(key)==null?"NENI V LOKALNIM CISELNIKU":Proteinaco.item.get(key).getVariant());
                         itemsNew.add(itemCodeNew);
                     }
 
