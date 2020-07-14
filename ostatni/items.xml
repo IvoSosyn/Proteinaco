@@ -65,4 +65,29 @@
         <NAME>Booster - nakopávač 30 dávek</NAME>
         <VARIANT>Booster - nakopávač 30 dávek</VARIANT>
     </ITEM>
+    <ITEM>
+       <CODE>177</CODE>
+        <NAME>100% VIRGIN WHEY 1 kg</NAME>
+        <VARIANT>100% VIRGIN WHEY 1 kg</VARIANT>
+    </ITEM>
+    <ITEM>
+       <CODE>260/EXO1</CODE>
+        <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
+        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+    </ITEM>
+    <ITEM>
+       <CODE>260/EXO2</CODE>
+        <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
+        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+    </ITEM>    
+    <ITEM>
+       <CODE>260/SOU</CODE>
+        <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
+        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+    </ITEM>
+    <ITEM>
+       <CODE>260/SOU2</CODE>
+        <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
+        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+    </ITEM>    
 </ORDER_ITEMS>
