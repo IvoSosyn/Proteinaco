@@ -73,21 +73,50 @@
     <ITEM>
        <CODE>260/EXO1</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 500g - exotic pineapple </VARIANT>
     </ITEM>
     <ITEM>
        <CODE>260/EXO2</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 250g - exotic pineapple </VARIANT>
     </ITEM>    
     <ITEM>
        <CODE>260/SOU</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 500g - sour apple</VARIANT>
     </ITEM>
-    <ITEM>
+<ITEM>
        <CODE>260/SOU2</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
-    </ITEM>    
+        <VARIANT>BCAA ENHANCED 250g - sour apple</VARIANT>
+    </ITEM>
+
+
+    <ITEM>
+       <CODE>648</CODE>
+        <NAME>Strong Joints – kloubní výživa 60 tbl</NAME>
+        <VARIANT>Strong Joints – kloubní výživa 60 tbl</VARIANT>
+    </ITEM> 
+<ITEM>
+       <CODE>67/BIS</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>biscuit cookie</VARIANT>
+    </ITEM>
+<ITEM>
+       <CODE>614/VAN</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+<ITEM>
+       <CODE>614/PIS</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>pistachio dessert</VARIANT>
+    </ITEM>
+
+   <ITEM>
+       <CODE>614/CHO</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>
+
 </ORDER_ITEMS>
