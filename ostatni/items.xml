@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <ORDER_ITEMS>
     <ITEM>
        <CODE>67/VAN</CODE>
@@ -73,21 +72,129 @@
     <ITEM>
        <CODE>260/EXO1</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 500g - exotic pineapple </VARIANT>
     </ITEM>
     <ITEM>
        <CODE>260/EXO2</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 250g - exotic pineapple </VARIANT>
     </ITEM>    
     <ITEM>
        <CODE>260/SOU</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
+        <VARIANT>BCAA ENHANCED 500g - sour apple</VARIANT>
     </ITEM>
-    <ITEM>
+<ITEM>
        <CODE>260/SOU2</CODE>
         <NAME>BCAA ENHANCED - komplex aminokyselin</NAME>
-        <VARIANT>BCAA ENHANCED - komplex aminokyselin</VARIANT>
-    </ITEM>    
+        <VARIANT>BCAA ENHANCED 250g - sour apple</VARIANT>
+    </ITEM>
+
+
+    <ITEM>
+       <CODE>648</CODE>
+        <NAME>Strong Joints – kloubní výživa 60 tbl</NAME>
+        <VARIANT>Strong Joints – kloubní výživa 60 tbl</VARIANT>
+    </ITEM> 
+<ITEM>
+       <CODE>67/BIS</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1 kg – 8 příchutí</NAME>
+        <VARIANT>biscuit cookie</VARIANT>
+    </ITEM>
+<ITEM>
+       <CODE>614/VAN</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+<ITEM>
+       <CODE>614/PIS</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>pistachio dessert</VARIANT>
+    </ITEM>
+
+   <ITEM>
+       <CODE>614/CHO</CODE>
+        <NAME>HYDRO WHEY 1kg</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/500</CODE>
+        <NAME>KETOSHAKE 500g</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/501</CODE>
+        <NAME>KETOSHAKE 500g</NAME>
+        <VARIANT>pistachio dessert</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/502</CODE>
+        <NAME>KETOSHAKE 500g</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/503</CODE>
+        <NAME>KETOSHAKE 500g</NAME>
+        <VARIANT>strawberry milkshake</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/100</CODE>
+        <NAME>KETOSHAKE 1kg</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+  <ITEM>
+       <CODE>710/504</CODE>
+        <NAME>KETOSHAKE 1kg</NAME>
+        <VARIANT>pistachio dessert</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/505</CODE>
+        <NAME>KETOSHAKE 1kg</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/506</CODE>
+        <NAME>KETOSHAKE 1kg</NAME>
+        <VARIANT>strawberry milkshake</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>710/508</CODE>
+        <NAME>KETOSHAKE 1kg</NAME>
+        <VARIANT>biscuit cookies</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>248/ITA3</CODE>
+        <NAME>NATURAL WHEY 1kg</NAME>
+        <VARIANT>italian cocoa</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>248/DRI3</CODE>
+        <NAME>NATURAL WHEY 1kg</NAME>
+        <VARIANT>dried strawberries</VARIANT>
+</ITEM>
+   <ITEM>
+       <CODE>761/VAN</CODE>
+        <NAME>TRIBLEND WHEY 1kg</NAME>
+        <VARIANT>vanilla dream</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>761/CHO</CODE>
+        <NAME>TRIBLEND WHEY 1kg</NAME>
+        <VARIANT>chocolate brownie</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>761/STR</CODE>
+        <NAME>TRIBLEND WHEY 1kg</NAME>
+        <VARIANT>strawberry milkshake</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>761/BIS</CODE>
+        <NAME>TRIBLEND WHEY 1kg</NAME>
+        <VARIANT>biscuit cookies</VARIANT>
+    </ITEM>
+   <ITEM>
+       <CODE>67/RAS</CODE>
+        <NAME>CFM WHEY PROTEIN 80 1kg</NAME>
+        <VARIANT>Raspberry cream</VARIANT>
+    </ITEM>
 </ORDER_ITEMS>
