@@ -41,6 +41,9 @@ public class Proteinaco {
     public static String urlOrderOriginalXml = null;
     public static File tempOrderOriginalXmlFile = null;
 
+    public static String urlStockOriginalXml = null;
+    public static File tempStockOriginalXmlFile = null;
+
     public static String codeKeysName = null;
     public static File codeKeysFile = null;
     public static HashMap<String, String[]> codeKeys = null;
@@ -52,6 +55,9 @@ public class Proteinaco {
 
     public static String orderXmlName = null;
     public static File orderXmlFile = null;
+
+    public static String stockXmlName = null;
+    public static File stockXmlFile = null;
 
     ReadProperties readProperties = null;
     ReadKeys readKeys = null;

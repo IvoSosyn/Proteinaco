@@ -42,7 +42,7 @@ public class ReadProperties {
         if (Proteinaco.propFile == null || !Proteinaco.propFile.canRead()) {
             System.out.println("Musi byt zadan nazev souboru s plnou cestou, kde jsou popsany parametry aplikace.");
             System.out.println("  např.: ");
-            System.out.println("        java -jar Properties.jar \"" + propFileName + "\" ");
+            System.out.println("        java -jar Proteinaco.jar \"" + propFileName + "\" ");
             System.out.println("  ");
             System.out.println("  Chybne zadano: " + (Proteinaco.propFile == null ? "<nezadano>" : Proteinaco.propFile.getAbsolutePath()));
             logger.warn("Chyba parametrickeho souboru aplikace " + (Proteinaco.propFile == null ? "<nezadano>" : Proteinaco.propFile.getAbsolutePath()) + " Nemohu načíst parametry");
@@ -65,16 +65,20 @@ public class ReadProperties {
         }
         // Nastavení proměnných
         Proteinaco.urlOrderOriginalXml = Proteinaco.prop.getProperty("urlOrder", "https://www.proteinaco.cz/export/orders.xml?patternId=41&hash=5d0a5c7c2f1ef8713f8c8b34ef0c3ecc63ba6f1147a7ac8eb031a470a40e3520");
+        Proteinaco.urlStockOriginalXml = Proteinaco.prop.getProperty("urlStock", "https://www.proteinaco.cz/export/productsComplete.xml?patternId=-5&hash=2898eb9b31a9f63a856f076ed127ec6a0a85f64f30c100e991e87887970fd3f5");
         Proteinaco.codeKeysName = Proteinaco.prop.getProperty("codeKeysCSV", System.getProperty("user.dir") + File.separator + "codeKeys.csv");
         Proteinaco.itemsXmlName = Proteinaco.prop.getProperty("itemsXMLName", System.getProperty("user.dir") + File.separator + "items.xml");
         Proteinaco.orderXmlName = Proteinaco.prop.getProperty("orderXmlName", System.getProperty("user.dir") + File.separator + "proteinaco.xml");
+        Proteinaco.stockXmlName = Proteinaco.prop.getProperty("stockXmlName", System.getProperty("user.dir") + File.separator + "productsComplete.xml");
 
         // Uložení parametrů do souboru
         if (Proteinaco.propFile != null && !Proteinaco.propFile.exists()) {
             Proteinaco.prop.setProperty("urlOrder", Proteinaco.urlOrderOriginalXml);
+            Proteinaco.prop.setProperty("urlStock", Proteinaco.urlStockOriginalXml);
             Proteinaco.prop.setProperty("codeKeysCSV", Proteinaco.codeKeysName);
             Proteinaco.prop.setProperty("itemsXMLName", Proteinaco.itemsXmlName);
             Proteinaco.prop.setProperty("orderXmlName", Proteinaco.orderXmlName);
+            Proteinaco.prop.setProperty("stockXmlName", Proteinaco.stockXmlName);
             try {
                 fos = new FileOutputStream(Proteinaco.propFile);
                 Proteinaco.prop.store(fos, "Promenne programu, definujici jeho vlastnosti:");
@@ -91,6 +95,5 @@ public class ReadProperties {
                 }
             }
         }
-
     }
 }
