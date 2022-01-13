@@ -14,7 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- *
+ * Třída načte konfigurační parametry z konfiguračního souboru \<propFileName\>
  * @author ivo
  */
 public class ReadProperties {

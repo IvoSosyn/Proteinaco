@@ -17,10 +17,15 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- *
+ * Třída načte klíče s popisem položek převodů-rozpadů na jiné položky ze souboru \<codeKeysName\>
+ * první položka v seznamu je ta, která se rozpadá na položky, které následují za odddělovačem
+ * např. 105/RAS,67/RAS,67/RAS ... položka 105/RAS se rozpadá na (2 položky) 67/RAS a 67/RAS
+ * 
  * @author sosyn
  */
 class ReadKeys {
+    
+    int MAX_POLOZEK_ROZPADU=15;
 
     /**
      * Implementace org.apache.logging.log4j.Logger
@@ -44,7 +49,7 @@ class ReadKeys {
                 stringTokenizer = new StringTokenizer(line, ",;|:");
                 key = null;
                 int i = 0;
-                items = new String[5];
+                items = new String[MAX_POLOZEK_ROZPADU];
                 while (stringTokenizer.hasMoreTokens()) {
                     String token = stringTokenizer.nextToken(",;|:");
                     if (key == null) {
@@ -79,5 +84,4 @@ class ReadKeys {
             }
         }
     }
-
 }
